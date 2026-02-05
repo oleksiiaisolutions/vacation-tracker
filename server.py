@@ -6,7 +6,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 os.chdir(BASE_DIR)
 import re
 
-PORT = 8000
+PORT = int(os.environ.get("PORT", 8000))
+
 DB_FILE = 'database.json'
 
 class VacationRequestHandler(http.server.SimpleHTTPRequestHandler):
